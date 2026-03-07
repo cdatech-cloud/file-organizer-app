@@ -1,0 +1,53 @@
+# Build results
+bin/
+obj/
+out/
+
+# Visual Studio cache/options
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+launch.json
+settings.json
+
+# Build and Release folders
+[Dd]ebug/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+
+# NuGet
+packages/
+.nuget/packages/
+*.nupkg
+*.snupkg
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# ReSharper
+.resharper
+._resharper*
+
+# Local History for Visual Studio
+.localhistory/
+
+# BeatPulse healthcheck temp database
+healthchecksdb
+
+# Rider
+.idea/
+*.sln.iml
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -38,6 +38,18 @@ namespace FileOrganizerApp.Views
 
         private void MoveToRecycleBin_Click(object sender, RoutedEventArgs e)
         {
+            // Show confirmation dialog
+            MessageBoxResult result = MessageBox.Show(
+                $"Are you sure you want to move '{_item.Name}' to Recycle Bin?",
+                "Confirm Delete",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (result != MessageBoxResult.Yes)
+            {
+                return; // User clicked "No", don't delete
+            }
+
             try
             {
                 _fileOrganizer.MoveToRecycleBin(_item.FullPath);

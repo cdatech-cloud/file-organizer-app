@@ -90,6 +90,9 @@ namespace FileOrganizerApp.Services
 
                 task.IsCompleted = true;
                 task.Status = "Completed";
+                
+                // Remove the task from the list after successful execution
+                _tasks.Remove(task);
             }
             catch (Exception ex)
             {

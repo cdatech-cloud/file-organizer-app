@@ -12,7 +12,7 @@
             <StackPanel Margin="0,0,0,20">
                 <Button Name="MoveToRecycleBinButton" Content="Move to Recycle Bin" 
                         Click="MoveToRecycleBin_Click" Height="40" Margin="0,0,0,10" 
-                        Background="#E74C3C" Foreground="White" FontSize="12"/>
+                        Background="#E67E22" Foreground="White" FontSize="12"/>
                 
                 <Button Name="SetCategoryButton" Content="Set Category" 
                         Click="SetCategory_Click" Height="40" Margin="0,0,0,10" 
@@ -20,13 +20,13 @@
                 
                 <Button Name="ScanFolderButton" Content="Scan Folder" 
                         Click="ScanFolder_Click" Height="40" Margin="0,0,0,10" 
-                        Background="#27AE60" Foreground="White" FontSize="12"
+                        Background="#2ECC71" Foreground="White" FontSize="12"
                         Visibility="Collapsed"/>
             </StackPanel>
 
             <Button Name="CancelButton" Content="Cancel" 
                     Click="Cancel_Click" Height="35" 
-                    Background="#95A5A6" Foreground="White" FontSize="12"/>
+                    Background="#BDC3C7" Foreground="White" FontSize="12"/>
         </StackPanel>
     </Grid>
 </Window>

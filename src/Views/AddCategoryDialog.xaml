@@ -29,9 +29,9 @@
 
             <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Right">
                 <Button Name="SaveButton" Content="Save" Width="80" Height="35"
-                        Click="Save_Click" Background="#27AE60" Foreground="White" Margin="0,0,10,0"/>
+                        Click="Save_Click" Background="#2ECC71" Foreground="White" Margin="0,0,10,0"/>
                 <Button Name="CancelButton" Content="Cancel" Width="80" Height="35"
-                        Click="Cancel_Click" Background="#95A5A6" Foreground="White"/>
+                        Click="Cancel_Click" Background="#BDC3C7" Foreground="White"/>
             </StackPanel>
         </StackPanel>
     </Grid>

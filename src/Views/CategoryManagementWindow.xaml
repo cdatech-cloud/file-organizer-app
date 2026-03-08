@@ -10,13 +10,13 @@
             <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
                 <Button Name="AddCategoryButton" Content="Add Category" 
                         Click="AddCategory_Click" Width="100" 
-                        Background="#27AE60" Foreground="White"/>
+                        Background="#2ECC71" Foreground="White"/>
                 <Button Name="EditCategoryButton" Content="Edit Category" 
                         Click="EditCategory_Click" Width="100" Margin="10,0,0,0"
                         Background="#3498DB" Foreground="White"/>
                 <Button Name="DeleteCategoryButton" Content="Delete Category" 
                         Click="DeleteCategory_Click" Width="120" Margin="10,0,0,0"
-                        Background="#E74C3C" Foreground="White"/>
+                        Background="#E67E22" Foreground="White"/>
             </StackPanel>
 
             <TextBlock FontSize="12" FontWeight="Bold" Text="Categories:" Margin="0,0,0,10"/>
@@ -31,7 +31,7 @@
             </ListView>
 
             <StackPanel Orientation="Horizontal" Margin="0,15,0,0" HorizontalAlignment="Right">
-                <Button Content="Close" Click="Close_Click" Width="80" Background="#95A5A6" Foreground="White"/>
+                <Button Content="Close" Click="Close_Click" Width="80" Background="#BDC3C7" Foreground="White"/>
             </StackPanel>
         </StackPanel>
     </Grid>

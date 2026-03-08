@@ -15,10 +15,10 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Name="OkButton" Content="OK" Click="Ok_Click" 
                         Height="35" Width="80" Margin="0,0,10,0"
-                        Background="#27AE60" Foreground="White"/>
+                        Background="#2ECC71" Foreground="White"/>
                 <Button Name="CancelButton" Content="Cancel" Click="Cancel_Click" 
                         Height="35" Width="80"
-                        Background="#95A5A6" Foreground="White"/>
+                        Background="#BDC3C7" Foreground="White"/>
             </StackPanel>
         </StackPanel>
     </Grid>

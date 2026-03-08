@@ -2,6 +2,7 @@ using System.Windows;
 using System.Windows.Input;
 using FileOrganizerApp.Models;
 using FileOrganizerApp.Services;
+using FileOrganizerApp.ViewModels;
 
 namespace FileOrganizerApp.Views
 {
@@ -23,11 +24,7 @@ namespace FileOrganizerApp.Views
             var items = _fileScanner.ScanDirectChildren(_currentPath);
             ItemsListView.ItemsSource = items;
 
-            this.DataContext = new
-            {
-                ScannedPath = _currentPath,
-                ItemCount = $"Total items: {items.Count}"
-            };
+            this.DataContext = new ScanResultsWindowViewModel(_currentPath, $"Total items: {items.Count}");
         }
 
         private void RescanButton_Click(object sender, RoutedEventArgs e)

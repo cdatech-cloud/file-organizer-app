@@ -1,6 +1,7 @@
 using System.Windows;
 using FileOrganizerApp.Models;
 using FileOrganizerApp.Services;
+using FileOrganizerApp.ViewModels;
 
 namespace FileOrganizerApp.Views
 {
@@ -25,7 +26,7 @@ namespace FileOrganizerApp.Views
                     ScanFolderButton.Visibility = Visibility.Visible;
                 }
 
-                this.DataContext = new { ItemName = item?.Name ?? "Unknown" };
+                this.DataContext = new ItemActionDialogViewModel(item?.Name ?? "Unknown");
             }
             catch (System.Exception ex)
             {

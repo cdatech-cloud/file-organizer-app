@@ -1,7 +1,7 @@
 <Window x:Class="FileOrganizerApp.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="File Organizer" Height="450" Width="800">
+        Title="File Organizer" Height="650" Width="900">
     <Grid>
         <Menu VerticalAlignment="Top">
             <MenuItem Header="File">
@@ -11,20 +11,50 @@
             <MenuItem Header="Categories" Click="CategoryManager_Click"/>
             <MenuItem Header="Tasks" Click="ViewTasks_Click"/>
         </Menu>
-        <StackPanel Margin="10">
-            <TextBlock FontSize="16" FontWeight="Bold" Text="Organize Your Files" Margin="0,0,0,10"/>
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                <Button Content="Start Scan" Width="100" Click="StartScan_Click"/>
-                <Button Content="Schedule Scan" Width="100" Click="ScheduleScan_Click" Margin="10,0,0,0"/>
-            </StackPanel>
-            <ListView Name="FileListView" Margin="0,0,0,0">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="File Name" Width="300" DisplayMemberBinding="{Binding FileName}"/>
-                        <GridViewColumn Header="Path" Width="400" DisplayMemberBinding="{Binding FilePath}"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </StackPanel>
+        <TabControl Margin="10,25,10,10">
+            <TabItem Header="File Organization" IsSelected="True">
+                <StackPanel Margin="10">
+                    <TextBlock FontSize="16" FontWeight="Bold" Text="Organize Your Files" Margin="0,0,0,10"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <Button Content="Start Scan" Width="100" Click="StartScan_Click" Background="#2ECC71" Foreground="White"/>
+                        <Button Content="Schedule Scan" Width="100" Click="ScheduleScan_Click" Margin="10,0,0,0" Background="#3498DB" Foreground="White"/>
+                    </StackPanel>
+                    <ListView Name="FileListView" Margin="0,0,0,0" Height="400">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="File Name" Width="350" DisplayMemberBinding="{Binding FileName}"/>
+                                <GridViewColumn Header="Path" Width="500" DisplayMemberBinding="{Binding FilePath}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Scan Results" Name="ScanResultsTab">
+                <StackPanel Margin="10">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock VerticalAlignment="Center" Text="Scanned Path: " FontWeight="Bold"/>
+                        <TextBlock Name="ScannedPathTextBlock" VerticalAlignment="Center" Margin="5,0,0,0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <Button Content="Rescan" Click="RescanButton_Click" Width="80" Background="#3498DB" Foreground="White"/>
+                    </StackPanel>
+
+                    <TextBlock FontSize="14" FontWeight="Bold" Text="Direct Children" Margin="0,0,0,5"/>
+                    
+                    <ListView Name="ItemsListView" Height="400" SelectionChanged="ItemsListView_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="350" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Type}"/>
+                                <GridViewColumn Header="Full Path" Width="300" DisplayMemberBinding="{Binding FullPath}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                    <TextBlock Name="ItemCountTextBlock" Margin="0,10,0,0" FontSize="12" Foreground="Gray"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

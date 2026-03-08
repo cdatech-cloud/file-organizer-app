@@ -95,8 +95,10 @@ namespace FileOrganizerApp.Views
 
         private void ScanFolder_Click(object sender, RoutedEventArgs e)
         {
-            ScanResultsWindow scanWindow = new ScanResultsWindow(_item.FullPath);
-            scanWindow.ShowDialog();
+            System.Windows.MessageBox.Show(
+                "Scan folder functionality is now available in the main window.\n\n" +
+                "Click 'Start Scan' from the main window and select this folder to view its contents.", 
+                "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             DialogResult = true;
             Close();
         }

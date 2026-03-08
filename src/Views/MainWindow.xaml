@@ -13,8 +13,11 @@
                 <MenuItem Header="Categories" Click="CategoryManager_Click" FontSize="12"/>
                 <MenuItem Header="Tasks" Click="ViewTasks_Click" FontSize="12"/>
             </Menu>
-            <TabControl DockPanel.Dock="Top" Margin="0" Padding="0" Background="#F8F9FA">
-                <TabItem Header="File Organization" IsSelected="True" Background="White" Margin="15,8">
+            <TabControl DockPanel.Dock="Top" Margin="0" Padding="0" Background="#F8F9FA" Foreground="#2C3E50">
+                <TabItem IsSelected="True" Background="White" Margin="0" Foreground="#2C3E50">
+                    <TabItem.Header>
+                        <TextBlock Text="File Organization" Padding="5" FontSize="12" FontWeight="SemiBold"/>
+                    </TabItem.Header>
                     <StackPanel Margin="20,20,20,20" Background="White">
                         <TextBlock FontSize="18" FontWeight="SemiBold" Text="Organize Your Files" Margin="0,0,0,20" Foreground="#2C3E50"/>
                         <TextBlock FontSize="12" Text="Select a folder to scan and organize files by category" Margin="0,0,0,15" Foreground="#7F8C8D"/>
@@ -39,7 +42,10 @@
                         </ListView>
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="Scan Results" Name="ScanResultsTab" Background="White" Margin="15,8">
+                <TabItem Name="ScanResultsTab" Background="White" Margin="0" Foreground="#2C3E50">
+                    <TabItem.Header>
+                        <TextBlock Text="Scan Results" Padding="5" FontSize="12" FontWeight="SemiBold"/>
+                    </TabItem.Header>
                     <StackPanel Margin="20,20,20,20" Background="White">
                         <Border Margin="0,0,0,15" Padding="12" Background="#ECF0F1">
                             <StackPanel Orientation="Horizontal">

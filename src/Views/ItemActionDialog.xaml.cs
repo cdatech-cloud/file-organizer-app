@@ -1,4 +1,5 @@
 using System.Windows;
+using FileOrganizerApp;
 using FileOrganizerApp.Models;
 using FileOrganizerApp.Services;
 using FileOrganizerApp.ViewModels;
@@ -10,6 +11,7 @@ namespace FileOrganizerApp.Views
         private FileSystemItem _item;
         private FileOrganizer _fileOrganizer;
         private FileScanner _fileScanner;
+        private TaskManager _taskManager;
 
         public ItemActionDialog(FileSystemItem item)
         {
@@ -19,6 +21,7 @@ namespace FileOrganizerApp.Views
                 _item = item;
                 _fileOrganizer = new FileOrganizer();
                 _fileScanner = new FileScanner();
+                _taskManager = AppContext.TaskManager;
 
                 // Show ScanFolder button only if item is a directory
                 if (item.IsDirectory && ScanFolderButton != null)
@@ -72,16 +75,19 @@ namespace FileOrganizerApp.Views
             {
                 try
                 {
-                    _fileOrganizer.SetFileCategory(_item.FullPath, categoryDialog.SelectedCategory);
-                    _item.Category = categoryDialog.SelectedCategory;
-                    MessageBox.Show($"'{_item.Name}' assigned to category '{categoryDialog.SelectedCategory.Name}'.", 
+                    // Create a task to move the item to the selected category
+                    _taskManager.AddTask("Move", _item.FullPath, categoryDialog.SelectedCategory.TargetPath);
+                    
+                    System.Windows.MessageBox.Show(
+                        $"Task created to move '{_item.Name}' to category '{categoryDialog.SelectedCategory.Name}'.", 
                         "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    
                     DialogResult = true;
                     Close();
                 }
                 catch (System.Exception ex)
                 {
-                    MessageBox.Show($"Error setting category: {ex.Message}", "Error", 
+                    System.Windows.MessageBox.Show($"Error creating task: {ex.Message}", "Error", 
                         MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }

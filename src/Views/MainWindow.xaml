@@ -9,6 +9,7 @@
                 <MenuItem Header="Exit" Click="Exit_Click"/>
             </MenuItem>
             <MenuItem Header="Categories" Click="CategoryManager_Click"/>
+            <MenuItem Header="Tasks" Click="ViewTasks_Click"/>
         </Menu>
         <StackPanel Margin="10">
             <TextBlock FontSize="16" FontWeight="Bold" Text="Organize Your Files" Margin="0,0,0,10"/>

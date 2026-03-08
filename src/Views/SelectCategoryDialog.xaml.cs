@@ -24,7 +24,7 @@ namespace FileOrganizerApp.Views
             }
             else
             {
-                MessageBox.Show("Please select a category.", "Selection Required", 
+                System.Windows.MessageBox.Show("Please select a category.", "Selection Required", 
                     MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }

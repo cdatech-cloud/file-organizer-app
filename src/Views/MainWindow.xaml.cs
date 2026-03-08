@@ -1,5 +1,7 @@
 using System.Windows;
 using System.Windows.Forms;
+using FileOrganizerApp;
+using FileOrganizerApp.Services;
 
 namespace FileOrganizerApp.Views
 {
@@ -24,6 +26,12 @@ namespace FileOrganizerApp.Views
         {
             var categoryWindow = new CategoryManagementWindow();
             categoryWindow.ShowDialog();
+        }
+
+        private void ViewTasks_Click(object sender, RoutedEventArgs e)
+        {
+            var tasksWindow = new TasksWindow(AppContext.TaskManager);
+            tasksWindow.ShowDialog();
         }
 
         private void StartScan_Click(object sender, RoutedEventArgs e)

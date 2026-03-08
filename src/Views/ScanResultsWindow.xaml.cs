@@ -37,7 +37,7 @@ namespace FileOrganizerApp.Views
             Close();
         }
 
-        private void ItemsListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void ItemsListView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             if (ItemsListView.SelectedItem is FileSystemItem selectedItem)
             {
@@ -49,11 +49,16 @@ namespace FileOrganizerApp.Views
                         // Refresh the list after action is completed
                         LoadResults();
                     }
+                    
+                    // Deselect the item after action is complete
+                    ItemsListView.SelectedItem = null;
                 }
                 catch (System.Exception ex)
                 {
                     MessageBox.Show($"Error opening item action dialog: {ex.Message}\n\n{ex.StackTrace}", 
                         "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    // Deselect on error
+                    ItemsListView.SelectedItem = null;
                 }
             }
         }

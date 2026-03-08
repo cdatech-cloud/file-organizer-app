@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Input;
 using FileOrganizerApp.Models;
 
 namespace FileOrganizerApp.Views
@@ -12,6 +13,16 @@ namespace FileOrganizerApp.Views
         {
             InitializeComponent();
             CategoriesListBox.ItemsSource = categories;
+        }
+
+        private void CategoriesListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (CategoriesListBox.SelectedItem is Category category)
+            {
+                SelectedCategory = category;
+                DialogResult = true;
+                Close();
+            }
         }
 
         private void Ok_Click(object sender, RoutedEventArgs e)

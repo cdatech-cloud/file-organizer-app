@@ -10,7 +10,7 @@
             </TextBlock>
 
             <ListBox Name="CategoriesListBox" Height="180" Margin="0,0,0,15" 
-                     DisplayMemberPath="Name" SelectedValuePath="."/>
+                     DisplayMemberPath="Name" SelectedValuePath="." MouseDoubleClick="CategoriesListBox_MouseDoubleClick"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Name="OkButton" Content="OK" Click="Ok_Click" 

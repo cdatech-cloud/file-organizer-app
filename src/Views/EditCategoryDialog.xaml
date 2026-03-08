@@ -1,7 +1,7 @@
 <Window x:Class="FileOrganizerApp.Views.EditCategoryDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Edit Category" Height="250" Width="500" 
+        Title="Edit Category" Height="320" Width="500" 
         WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
     <Grid Background="#F5F5F5">
         <StackPanel Margin="20" VerticalAlignment="Stretch">

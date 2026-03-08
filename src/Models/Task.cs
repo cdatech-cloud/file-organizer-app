@@ -10,12 +10,14 @@ namespace FileOrganizerApp.Models
         public string Destination { get; set; } // Target location (only for Move action)
         public DateTime CreatedAt { get; set; }
         public bool IsCompleted { get; set; }
+        public string Status { get; set; } // "Todo", "InProgress", "Completed"
 
         public Task()
         {
             Id = Guid.NewGuid().ToString();
             CreatedAt = DateTime.Now;
             IsCompleted = false;
+            Status = "Todo";
         }
 
         public Task(string action, string subject, string destination = null)
@@ -26,6 +28,7 @@ namespace FileOrganizerApp.Models
             Destination = destination;
             CreatedAt = DateTime.Now;
             IsCompleted = false;
+            Status = "Todo";
         }
 
         public string DisplayName => System.IO.Path.GetFileName(Subject);

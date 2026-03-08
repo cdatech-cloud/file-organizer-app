@@ -89,6 +89,7 @@ namespace FileOrganizerApp.Services
                 }
 
                 task.IsCompleted = true;
+                task.Status = "Completed";
             }
             catch (Exception ex)
             {

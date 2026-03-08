@@ -28,7 +28,7 @@
                         <GridViewColumn Header="Action" Width="80" DisplayMemberBinding="{Binding Action}"/>
                         <GridViewColumn Header="Subject (Full Path)" Width="300" DisplayMemberBinding="{Binding Subject}"/>
                         <GridViewColumn Header="Destination" Width="200" DisplayMemberBinding="{Binding Destination}"/>
-                        <GridViewColumn Header="Status" Width="80" DisplayMemberBinding="{Binding IsCompleted, StringFormat='Completed: {0}'}"/>
+                        <GridViewColumn Header="Status" Width="80" DisplayMemberBinding="{Binding Status}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

@@ -22,7 +22,8 @@ namespace FileOrganizerApp.Views
 
         private void CategoryManager_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.MessageBox.Show("Category Manager - Not yet implemented", "File Organizer");
+            var categoryWindow = new CategoryManagementWindow();
+            categoryWindow.ShowDialog();
         }
 
         private void StartScan_Click(object sender, RoutedEventArgs e)

@@ -1,0 +1,38 @@
+<Window x:Class="FileOrganizerApp.Views.EditCategoryDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edit Category" Height="250" Width="500" 
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Grid Background="#F5F5F5">
+        <StackPanel Margin="20" VerticalAlignment="Stretch">
+            <TextBlock FontSize="14" FontWeight="Bold" Margin="0,0,0,20" Text="Edit Category"/>
+
+            <StackPanel Margin="0,0,0,15">
+                <TextBlock Text="Category Name:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBox Name="CategoryNameTextBox" Height="35" Padding="10" 
+                         FontSize="12" Background="White" BorderBrush="#CCCCCC" BorderThickness="1"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock Text="Target Location (Path):" FontWeight="Bold" Margin="0,0,0,5"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="TargetPathTextBox" Height="35" Padding="10" 
+                             FontSize="12" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Grid.Column="0"/>
+                    <Button Name="BrowseButton" Content="Browse" Grid.Column="1" Width="80" Margin="10,0,0,0"
+                            Click="Browse_Click" Background="#3498DB" Foreground="White"/>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Right">
+                <Button Name="SaveButton" Content="Save" Width="80" Height="35"
+                        Click="Save_Click" Background="#27AE60" Foreground="White" Margin="0,0,10,0"/>
+                <Button Name="CancelButton" Content="Cancel" Width="80" Height="35"
+                        Click="Cancel_Click" Background="#95A5A6" Foreground="White"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -8,17 +8,18 @@ namespace FileOrganizerApp.Services
 {
     public class FileOrganizer
     {
-        private List<Category> categories;
+        private CategoryManager _categoryManager;
         private Dictionary<string, Category> fileCategories;
 
         public FileOrganizer()
         {
-            categories = new List<Category>();
+            _categoryManager = new CategoryManager();
             fileCategories = new Dictionary<string, Category>();
         }
 
         public void OrganizeFiles(string sourcePath)
         {
+            var categories = _categoryManager.GetCategories();
             foreach (var category in categories)
             {
                 string targetPath = category.TargetPath;
@@ -42,15 +43,9 @@ namespace FileOrganizerApp.Services
             }
         }
 
-        public void CreateCategory(string name, string targetPath)
-        {
-            var category = new Category(name, targetPath);
-            categories.Add(category);
-        }
-
         public List<Category> GetCategories()
         {
-            return categories;
+            return _categoryManager.GetCategories();
         }
 
         public void MoveToRecycleBin(string filePath)
@@ -98,5 +93,8 @@ namespace FileOrganizerApp.Services
             // Implement logic to determine if the file should be moved to the category
             return true; // Placeholder for actual logic
         }
+    }
+}
+
     }
 }

@@ -23,7 +23,7 @@ namespace FileOrganizerApp.Views
                 folderDialog.Description = "Select the target location for this category";
                 folderDialog.ShowNewFolderButton = true;
 
-                if (folderDialog.ShowDialog() == DialogResult.OK)
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     TargetPathTextBox.Text = folderDialog.SelectedPath;
                 }
@@ -34,14 +34,14 @@ namespace FileOrganizerApp.Views
         {
             if (string.IsNullOrWhiteSpace(CategoryNameTextBox.Text))
             {
-                MessageBox.Show("Please enter a category name.", "Validation Error", 
+                System.Windows.MessageBox.Show("Please enter a category name.", "Validation Error", 
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TargetPathTextBox.Text))
             {
-                MessageBox.Show("Please enter or select a target path.", "Validation Error", 
+                System.Windows.MessageBox.Show("Please enter or select a target path.", "Validation Error", 
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }

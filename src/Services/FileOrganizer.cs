@@ -95,6 +95,3 @@ namespace FileOrganizerApp.Services
         }
     }
 }
-
-    }
-}

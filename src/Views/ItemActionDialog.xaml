@@ -1,0 +1,32 @@
+<Window x:Class="FileOrganizerApp.Views.ItemActionDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="What to do with this item?" Height="250" Width="400" 
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Grid Background="#F5F5F5">
+        <StackPanel Margin="20" VerticalAlignment="Stretch">
+            <TextBlock FontSize="14" FontWeight="Bold" Margin="0,0,0,10" TextWrapping="Wrap">
+                <Run Text="Item: "/><Run Text="{Binding ItemName}" FontFamily="Courier New"/>
+            </TextBlock>
+
+            <StackPanel Margin="0,0,0,20">
+                <Button Name="MoveToRecycleBinButton" Content="Move to Recycle Bin" 
+                        Click="MoveToRecycleBin_Click" Height="40" Margin="0,0,0,10" 
+                        Background="#E74C3C" Foreground="White" FontSize="12"/>
+                
+                <Button Name="SetCategoryButton" Content="Set Category" 
+                        Click="SetCategory_Click" Height="40" Margin="0,0,0,10" 
+                        Background="#3498DB" Foreground="White" FontSize="12"/>
+                
+                <Button Name="ScanFolderButton" Content="Scan Folder" 
+                        Click="ScanFolder_Click" Height="40" Margin="0,0,0,10" 
+                        Background="#27AE60" Foreground="White" FontSize="12"
+                        Visibility="Collapsed"/>
+            </StackPanel>
+
+            <Button Name="CancelButton" Content="Cancel" 
+                    Click="Cancel_Click" Height="35" 
+                    Background="#95A5A6" Foreground="White" FontSize="12"/>
+        </StackPanel>
+    </Grid>
+</Window>

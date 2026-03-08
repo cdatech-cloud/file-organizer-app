@@ -1,4 +1,6 @@
 using System.Windows;
+using System.Windows.Input;
+using FileOrganizerApp.Models;
 using FileOrganizerApp.Services;
 
 namespace FileOrganizerApp.Views
@@ -37,5 +39,27 @@ namespace FileOrganizerApp.Views
         {
             Close();
         }
+
+        private void ItemsListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (ItemsListView.SelectedItem is FileSystemItem selectedItem)
+            {
+                try
+                {
+                    var actionDialog = new ItemActionDialog(selectedItem);
+                    if (actionDialog.ShowDialog() == true)
+                    {
+                        // Refresh the list after action is completed
+                        LoadResults();
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show($"Error opening item action dialog: {ex.Message}\n\n{ex.StackTrace}", 
+                        "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
     }
 }
+

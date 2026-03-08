@@ -6,12 +6,14 @@ namespace FileOrganizerApp.Models
         public string FullPath { get; set; }
         public bool IsDirectory { get; set; }
         public string Type => IsDirectory ? "Folder" : "File";
+        public Category Category { get; set; }
 
         public FileSystemItem(string name, string fullPath, bool isDirectory)
         {
             Name = name;
             FullPath = fullPath;
             IsDirectory = isDirectory;
+            Category = null;
         }
     }
 }
